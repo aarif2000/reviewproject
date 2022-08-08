@@ -5,38 +5,37 @@ class Ability
 
   def initialize(user)
     
-    if user
+    if user.present?
+          user_role=user.current_role
+          hr_work if user_role == 'Hr'
+          tl_work if user_role == 'Team Lead'
+          se_work if user_role =='Software Engineer'
+          ase_work if user_role =='Assistant Software Engineer'
 
-      if user.role.first.role == 'HR'
-        can :manage, :all
-      # elsif user.role.second.role=='ASE'
-        # can :read, :all
-      end
-    end
-    # Define abilities for the user here. For example:
-    #
-    #   return unless user.present?
-    #   can :read, :all
-    #   return unless user.admin?
-    #   can :manage, :all
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, published: true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
-  # end
+  end
+  return unless user.present?
+end 
+  
+  def hr_work
+    can :manage, :all 
+  end
+
+  def tl_work 
+    can :Show, :all
+  end
+
+  def se_work
+    can :Show, :all
+    can :Create, :all
+
+  end
+
+  def ase_work
+    can :Create, :all 
+
+  end
+
+  
 end
-end
+
+

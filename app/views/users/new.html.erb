@@ -1,6 +1,7 @@
 <div class="create_user">
 
 <h2>Create the users </h2>
+
 <%=form_with model: @user, url: posts_path do |f|%>
 
 <%= f.text_field :name ,placeholder: "Enter your name" %>
@@ -15,6 +16,7 @@
 <br>
 <%= f.submit %>
 <% end %>
+
 <div>
 
 
