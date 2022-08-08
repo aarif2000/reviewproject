@@ -1,0 +1,22 @@
+<div class="create_user">
+
+<h2>Create the users </h2>
+<%=form_with model: @user, url: posts_path do |f|%>
+
+<%= f.text_field :name ,placeholder: "Enter your name" %>
+
+<br>
+<%= f.text_field :email ,placeholder: "Enter your email"%>
+<br>
+<%= f.password_field :password ,placeholder: "Enter your password"%>
+<br>
+
+<%= f.text_field :role ,placeholder: "Enter your role"%>
+<br>
+<%= f.submit %>
+<% end %>
+<div>
+
+
+
+
