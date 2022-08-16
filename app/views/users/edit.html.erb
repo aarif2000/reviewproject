@@ -1,10 +1,10 @@
 <div class="edit_details">
 
-<h2>Update the users </h2>
+<h2>Update the Employee </h2>
 <%=form_with method:'PATCH',url: "/users/#{params[:id]}" do |f|%>
 <%= f.text_field :name ,placeholder: "Enter your name"%>
 <br>
-<%= f.text_field :role ,placeholder: "Enter your role"%>
+<%= f.text_field :role ,placeholder: "Enter your Role"%>
 <br>
 <%= f.submit%>
 

@@ -17,15 +17,16 @@ class Ability
 end 
   
   def hr_work
-    can :manage, :all 
+    can :manage, :all
   end
 
   def tl_work 
-    can :Show, :all
+    can :Show, User
+    
   end
 
   def se_work
-    can :Show, :all
+    can :Show, User
     can :Create, :all
 
   end

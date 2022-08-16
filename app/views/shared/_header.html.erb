@@ -10,11 +10,6 @@
           <%= link_to "Home",root_path, class: "nav-link"%>
 
         </li>
-        <%if can? :create, User%>
-        <li class="nav-item">
-          <%= link_to "create user", new_user_path, class: "nav-link"%>
-        </li>
-        <%end%>
         <% unless user_signed_in? %>
          
          <li class="nav-item">

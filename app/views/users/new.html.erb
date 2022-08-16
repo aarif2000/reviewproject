@@ -1,18 +1,27 @@
 <div class="create_user">
 
-<h2>Create the users </h2>
+<h2>Create New Employee </h2>
 
 <%=form_with model: @user, url: posts_path do |f|%>
-
+<div class="name">
 <%= f.text_field :name ,placeholder: "Enter your name" %>
+<div>
 
 <br>
-<%= f.text_field :email ,placeholder: "Enter your email"%>
+<div class="email">
+
+<%= f.text_field :email ,placeholder: "Enter Email"%>
+<div>
 <br>
-<%= f.password_field :password ,placeholder: "Enter your password"%>
+<div class="password">
+
+<%= f.password_field :password ,placeholder: "Enter Password"%>
+</div>
 <br>
 
-<%= f.text_field :role ,placeholder: "Enter your role"%>
+<div class="role">
+<%= f.text_field :current_role ,placeholder: "Enter Current Role"%>
+</div>
 <br>
 <%= f.submit %>
 <% end %>

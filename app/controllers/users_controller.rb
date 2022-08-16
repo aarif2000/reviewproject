@@ -13,15 +13,14 @@ class UsersController < ApplicationController
   end
 
   def create 
-     
-    User.create(:name=>params[:name],:email=>params[:email],:password=>params[:password])
+    User.create(:name=>params[:name],:email=>params[:email],:password=>params[:password],current_role: params[:current_role])
     redirect_to users_path
   end
 
   def update 
 
     @user = User.find(params[:id])
-    @user.update(name: params[:name],role: params[:role])
+    @user.update(name: params[:name],current_role: params[:curent_role])
     redirect_to users_path
   end
 
