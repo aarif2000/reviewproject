@@ -1,0 +1,43 @@
+<div class="col-lg-6 mx-lg-auto">
+<div class="card shadow">
+<div class="card-header">
+<h2 class="card-title ">New Review</h2>
+</div>
+<div class="card-body">
+
+<%= form_with(model: @review) do |form| %>
+  <% if @review.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% @review.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :employee_Id, style: "display: block" %>
+    <%= form.number_field :employee_id,class: "form-control form-control-lg" %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title,class: "form-control form-control-lg" %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description, class: "form-control form-control-lg" %>
+  </div>
+
+  <div>
+    <%= form.submit "Submit",class:"btn btn-success btn-sm"%>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+
+
+
+

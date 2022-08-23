@@ -7,9 +7,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
 
+    validates :name, :email,:current_role, presence: :true 
+      
+
           private 
 
          def after_confirmation 
           WelcomeMailer.send_greetings(self).deliver_now
          end
+
+         
 end

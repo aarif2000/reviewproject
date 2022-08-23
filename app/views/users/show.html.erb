@@ -1,8 +1,21 @@
-<div class="show_details">
-<h1> Users details </h1>
- Name: <%=@users.name %>
-<br>
- Email: <%= @users.email%>
-<br>
+<div class="col-lg-6 mx-lg-auto">
+<div class="card shadow">
+<div class="card-header">
+<h2 class="card-title">Employee Details</h2>
+</div>
+<div class="card-body">
+
+
+  Name: <%=@users.name %>
+  <br/>
+  Email: <%= @users.email%>
+  <br/>
+  Role: <%= @users.current_role%>
+<br/>
+  Joined Date <%= @users.created_at.strftime("%B %d %Y ") %>
+
+  <br/>
+</div>
+</div>
 </div>
 

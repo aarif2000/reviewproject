@@ -1,0 +1,18 @@
+<div class="col-lg-6 mx-lg-auto">
+<div class="card shadow">
+<div class="card-header">
+<h2 class="card-title">Event Details</h2>
+</div>
+<div class="card-body">
+  Title: <%=@events.title %>
+  <br/>
+  Start_Date: <%= @events.StartDate%> 
+  <br/>
+  EndDate : <%= @events.EndDate%>
+
+    <td><%= button_to 'Show All the received Reviews', reviews_path, method: 'get',class: "btn btn-info"  %></td>
+
+</div>
+</div>
+</div>
+

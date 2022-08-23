@@ -10,23 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_08_193649) do
-  create_table "roles", force: :cascade do |t|
-    t.string "role"
+ActiveRecord::Schema[7.0].define(version: 2022_08_22_105732) do
+  create_table "events", charset: "utf8mb3", force: :cascade do |t|
+    t.text "title"
+    t.date "StartDate"
+    t.date "EndDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "typesroles", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "role_id", null: false
+  create_table "reviews", charset: "utf8mb3", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_typesroles_on_role_id"
-    t.index ["user_id"], name: "index_typesroles_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -49,6 +50,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_08_193649) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "typesroles", "roles"
-  add_foreign_key "typesroles", "users"
 end

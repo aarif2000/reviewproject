@@ -13,14 +13,14 @@ class UsersController < ApplicationController
   end
 
   def create 
-    User.create(:name=>params[:name],:email=>params[:email],:password=>params[:password],current_role: params[:current_role])
+    User.create
+    User.create(:name=>params[:name],:email=>params[:email],:password=>params[:password],current_role: params[:Role_list])
     redirect_to users_path
-  end
+    end
 
-  def update 
-
+    def update 
     @user = User.find(params[:id])
-    @user.update(name: params[:name],current_role: params[:curent_role])
+    @user.update(name: params[:name],email: params[:email])
     redirect_to users_path
   end
 
@@ -43,6 +43,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-    params.require(:user).permit(:name , :role)
+    params.require(:user).permit(:name , :email, :password,:current_role)
   end
 end

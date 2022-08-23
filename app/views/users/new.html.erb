@@ -1,33 +1,34 @@
-<div class="create_user">
-
-<h2>Create New Employee </h2>
-
-<%=form_with model: @user, url: posts_path do |f|%>
-<div class="name">
-<%= f.text_field :name ,placeholder: "Enter your name" %>
-<div>
-
-<br>
-<div class="email">
-
-<%= f.text_field :email ,placeholder: "Enter Email"%>
-<div>
-<br>
-<div class="password">
-
-<%= f.password_field :password ,placeholder: "Enter Password"%>
+<div class="col-lg-6 mx-lg-auto">
+<div class="card shadow">
+<div class="card-header bg-primary">
+<h2 class="card-title text-center">Create New Employee</h2>
 </div>
-<br>
+<div class="card-body">
 
-<div class="role">
-<%= f.text_field :current_role ,placeholder: "Enter Current Role"%>
-</div>
-<br>
-<%= f.submit %>
-<% end %>
+  <%=form_with model: @user, url: posts_path do |f|%>
+  <div class="name">
+    <%= f.text_field :name ,placeholder: "Enter Employee Name",class: "form-control form-control-lg" %>
+    <div>
+      <br />
+      <div class="email">
+        <%= f.text_field :email ,placeholder: "Enter Employee Email",class: "form-control form-control-lg"%>
+        <div>
+          <br />
+          <div class="password">
+            <%= f.password_field :password ,placeholder: "Enter Employee Password", class: "form-control form-control-lg"%>
+          </div>
+          <br />
 
-<div>
+          <div class="current_role">
+            <%= f.select :Role_list, ["HR","Team Lead","Software Engineer","Assistant Software Engineer"], :prompt => 'Select Role'%>
+          </div>
+          <br/>
+          <%= f.submit "submit",class:"btn btn-success btn-lg mb-1" %> 
+          <% end %>
 
-
-
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
