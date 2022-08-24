@@ -2,24 +2,19 @@
 
 class Ability
   include CanCan::Ability
-
   def initialize(user)
-    if user.present?
-          user_role=user.current_role
-          hr_work if user_role == 'Hr'
+  if user.present?
+    user_role=user.current_role
+    if user_role=="Hr"
+      can :manage, User
+      can :manage, :all
+      can :manage, Event
+      can :manage, Review
+    else
+      can :create, Review
+      end 
   end
-  return if user.nil?
-end 
-  
-  def hr_work
-    can :manage, User
-    can :manage, :all
-
-    can :manage ,Event
-
-    # can :manage, Reviews
-
-  end
+end
 end
 
 

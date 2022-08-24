@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  # load_and_authorize_resource
+
   
   before_action :set_review, only: %i[ show edit update destroy ]
 
@@ -18,6 +20,11 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+  end
+  
+
+  def messages 
+    
   end
 
   # POST /reviews or /reviews.json

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # load_and_authorize_resource
+  # debugger
   def index
     @users = User.all
   end
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 
   def create 
     User.create
-    User.create(:name=>params[:name],:email=>params[:email],:password=>params[:password],current_role: params[:Role_list])
+    User.create(:name=>params[:name],:email=>params[:email],:password=>params[:password],:current_role=>params[:current_role])
     redirect_to users_path
     end
 

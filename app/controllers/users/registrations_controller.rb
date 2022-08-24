@@ -60,7 +60,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     confirmation_pending_path
     
   end
-
+  def after_sign_out_path_for(resource)
+    root_path
+  end
 
   private
   def order_params
