@@ -11,11 +11,8 @@ Rails.application.routes.draw do
   post '/posts', to: 'users#create'
   post 'eventsposts', to: "events#create"
   get 'messagespath', to: "reviews#messages"
-
-
+  
   resources :users
   resources :events
   resources :reviews
-
-
 end
