@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # load_and_authorize_resource
-  # debugger
+  
   def index
     @users = User.all
   end
