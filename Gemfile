@@ -10,12 +10,9 @@ gem "sprockets-rails"
 gem 'mysql2'
 gem "puma", "~> 5.0"
 gem "importmap-rails"
-gem "turbo-rails"
-
+gem "turbo-rails" 
 gem "stimulus-rails"
-
 gem "jbuilder"
-
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
