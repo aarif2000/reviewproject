@@ -2,7 +2,7 @@
 <div class="card shadow">
 <div class="card-header">
 <h2 class="card-title">Update An Employee</h2>
-</div>
+ </div>
         <div class="card-body">
         <div class="edit_details">
           <%=form_with method:'PATCH',url: "/users/#{params[:id]}" do |f|%>
@@ -12,7 +12,6 @@
           <%= f.email_field :email ,placeholder: "Enter Updated Email",class: "form-control-lg"%>
           <br/>
           <%= f.submit "submit",class:"btn btn-success btn-lg mb-1" %>
-
           <% end %>
         </div>
      </div>
