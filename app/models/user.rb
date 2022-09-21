@@ -10,7 +10,7 @@ class User < ApplicationRecord
     validates :name, :email,:current_role, presence: :true 
       
 
-          private 
+        #   private 
 
         #  def after_confirmation 
         #   WelcomeMailer.send_greetings(self).deliver_now
