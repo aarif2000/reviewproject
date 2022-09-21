@@ -57,3 +57,12 @@ h3 {
   margin: 0px 377px;
 }
 
+.messagesview{
+  text-align: center;
+  font-size: larger;
+}
+.eventindex{
+  margin: 0;
+  padding: 0;
+}
+
