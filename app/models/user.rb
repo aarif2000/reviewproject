@@ -5,16 +5,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :trackable
+         :trackable
 
     validates :name, :email,:current_role, presence: :true 
       
 
           private 
 
-         def after_confirmation 
-          WelcomeMailer.send_greetings(self).deliver_now
-         end
+        #  def after_confirmation 
+        #   WelcomeMailer.send_greetings(self).deliver_now
+        #  end
 
          
 end
